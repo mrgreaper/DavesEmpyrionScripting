@@ -44,5 +44,21 @@ namespace EmpyrionScripting.Examples.DaveCode
             }
             //the last line for the lcd script is one above this
         }
+
+        public void makeArray(IScriptModData g) //after 2 hours of writing out the array i realised there was an easier way...sorta
+        {
+            var E = g.E;
+            var CsRoot = g.CsRoot;
+
+            //code starts here
+            string result = "";
+            var sItems = CsRoot.Items(E.S, "TestBox");
+            foreach(var item in sItems)
+            {
+                result += item.Id + ", ";
+            }
+            Console.WriteLine(result);
+            //ends here
+        }
     }
 }
